@@ -816,7 +816,7 @@ for inddataset = 1:length(ALLEEG)
     % pop_select does not behave correctly when
     % removing data points
     % --------------------
-    if EEG.trials == 1 && EEG.xmin ~= 0
+    if EEG.trials == 1 && EEG.xmin ~= 0 && ~isfield(EEG,'epoch')
         EEG.xmin = 0;
         fprintf( 'eeg_checkset note: xmin set to 0 for continuous data\n');
         res = com;
